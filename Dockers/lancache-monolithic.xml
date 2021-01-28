@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>lancachenet-monolithic</Name>
+  <Repository>lancachenet/monolithic</Repository>
+  <Registry>https://hub.docker.com/r/lancachenet/monolithic</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.250</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>http://lancache.net/support/</Support>
+  <Project>https://github.com/lancachenet/monolithic</Project>
+  <Overview>A monolithic lancache service capable of caching all CDNs in a single instance.</Overview>
+  <Category>Downloaders: GameServers: Network:DNS Network:Proxy Status:Beta</Category>
+  <Icon>https://raw.githubusercontent.com/lancachenet/graphics/master/lancache-mini-square.png</Icon>
+  <DonateText>Buy a Coffee for Lancache.Net</DonateText>
+  <DonateLink>https://ko-fi.com/lancachenet</DonateLink>
+  <Description>A monolithic lancache service capable of caching all CDNs in a single instance.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>53</HostPort>
+        <ContainerPort>53</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="LANCACHE_IP" Target="LANCACHE_IP" Default="192.168.1.250" Mode="" Description="The IP of the cache server." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DNS_BIND_IP" Target="DNS_BIND_IP" Default="192.168.1.250" Mode="" Description="The IP of the DNS server." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="UPSTREAM_DNS" Target="UPSTREAM_DNS" Default="8.8.8.8 8.8.4.4" Mode="" Description="The upstream DNS server(s) the cache should use." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Cache Directory" Target="/data/cache" Default="/mnt/user/lancache/" Mode="rw" Description="The location where things will be cached." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/lancache/</Config>
+  <Config Name="Logs Directory" Target="/data/logs" Default="/mnt/appdata/lancache-monolithic/logs/" Mode="rw" Description="Container Path: /data/logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/lancache-monolithic/logs/</Config>
+  <Config Name="CACHE_MEM_SIZE" Target="CACHE_MEM_SIZE" Default="500m" Mode="" Description="The amount of memory the container should use for caching data." Type="Variable" Display="always" Required="false" Mask="false">500m</Config>
+  <Config Name="CACHE_DISK_SIZE" Target="CACHE_DISK_SIZE" Default="1000000m" Mode="" Description="The amount of disk space the container should use for caching data." Type="Variable" Display="always" Required="true" Mask="false">1000000m</Config>
+  <Config Name="CACHE_MAX_AGE" Target="CACHE_MAX_AGE" Default="3560d" Mode="" Description="The maximum amount of time a file should be held in cache." Type="Variable" Display="always" Required="false" Mask="false">3560d</Config>
+  <Config Name="CACHE_SLICE_SIZE" Target="CACHE_SLICE_SIZE" Default="1m" Mode="" Description="The size of which data is sliced. NOTE: Changing this will invalidate any current cache data." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="CACHE_DOMAINS_REPO" Target="CACHE_DOMAINS_REPO" Default="https://github.com/uklans/cache-domains.git" Mode="" Description="The github repo url for the cache_domains files to use to populate the cdn maps." Type="Variable" Display="advanced-hide" Required="false" Mask="false">https://github.com/uklans/cache-domains.git</Config>
+  <Config Name="CACHE_DOMAINS_BRANCH" Target="CACHE_DOMAINS_BRANCH" Default="" Mode="" Description="The branch of the CACHE_DOMAINS_REPO to use." Type="Variable" Display="advanced-hide" Required="false" Mask="false">master</Config>
+  <Config Name="NOFETCH" Target="NOFETCH" Default="false" Mode="" Description="Turn off all git pull operations and use stored data." Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+  <Config Name="NGINX_WORKER_PROCESSES" Target="NGINX_WORKER_PROCESSES" Default="auto" Mode="" Description="The number of NGINX worker processes." Type="Variable" Display="advanced-hide" Required="false" Mask="false">auto</Config>
+  <Config Name="LOGFILE_RETENTION" Target="LOGFILE_RETENTION" Default="3560" Mode="" Description="The amount of days log files are kept." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="DISABLE_ARENANET" Target="DISABLE_ARENANET" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_BLIZZARD" Target="DISABLE_BLIZZARD" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_CITYOFHEROES" Target="DISABLE_CITYOFHEROES" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_DAYBREAK" Target="DISABLE_DAYBREAK" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_EPICGAMES" Target="DISABLE_EPICGAMES" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_FRONTIER" Target="DISABLE_FRONTIER" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_HIREZ" Target="DISABLE_HIREZ" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_NEVERWINTER" Target="DISABLE_NEVERWINTER" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_NEXUSMODS" Target="DISABLE_NEXUSMODS" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_NINTENDO" Target="DISABLE_NINTENDO" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_ORIGIN" Target="DISABLE_ORIGIN" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_RENEGADEX" Target="DISABLE_RENEGADEX" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_RIOT" Target="DISABLE_RIOT" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_ROCKSTAR" Target="DISABLE_ROCKSTAR" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_SONY" Target="DISABLE_SONY" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_STEAM" Target="DISABLE_STEAM" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_TESO" Target="DISABLE_TESO" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_TWITCH" Target="DISABLE_TWITCH" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_UPLAY" Target="DISABLE_UPLAY" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_WARFRAME" Target="DISABLE_WARFRAME" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_WARGAMING" Target="DISABLE_WARGAMING" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_WSUS" Target="DISABLE_WSUS" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DISABLE_XBOXLIVE" Target="DISABLE_XBOXLIVE" Default="" Mode="" Description="Set to true to disable." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
