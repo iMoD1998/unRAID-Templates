@@ -25,12 +25,14 @@
     <Config Name="MYSQL_PORT" Target="MYSQL_PORT" Default="" Mode="" Description="The port to use for the MySQL server." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="MYSQL_DB" Target="MYSQL_DB" Default="hashtopolis" Mode="" Description="The name of the database that will be used." Type="Variable" Display="always" Required="false" Mask="false">hashtopolis</Config>
     <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="" Mode="" Description="The password of the root user." Type="Variable" Display="always" Required="false" Mask="false">password</Config>
-    <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="The name of the user account that hashtopolis will use." Type="Variable" Display="always" Required="false" Mask="false">hashtopolis</Config>
-    <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="The password of this user." Type="Variable" Display="always" Required="false" Mask="false">password</Config>
-    <Config Name="H8_USER" Target="H8_USER" Default="" Mode="" Description="The admin user account to be added to hashtopolis." Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
-    <Config Name="H8_PASS" Target="H8_PASS" Default="" Mode="" Description="The admin password." Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+    <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="The name of the user account that hashtopolis will use." Type="Variable" Display="true" Required="false" Mask="false">hashtopolis</Config>
+    <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="The password of this user." Type="Variable" Display="always" Required="true" Mask="false">password</Config>
+    <Config Name="H8_USER" Target="H8_USER" Default="" Mode="" Description="The admin user account to be added to hashtopolis." Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+    <Config Name="H8_PASS" Target="H8_PASS" Default="" Mode="" Description="The admin password." Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
     <Config Name="H8_EMAIL" Target="H8_EMAIL" Default="" Mode="" Description="The email of this user." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="PHP_MAIL_HOST" Target="PHP_MAIL_HOST" Default="" Mode="" Description="The SMTP server IP address." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="PHP_MAIL_PORT" Target="PHP_MAIL_PORT" Default="" Mode="" Description="The port to use for the SMTP server." Type="Variable" Display="always" Required="false" Mask="false"/>
     <Config Name="PHP_MAILFROM" Target="PHP_MAILFROM" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="HTML Directory" Target="/var/www/html/" Default="" Mode="rw" Description="Container Path: /var/www/html/" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/appdata/hashtopolis-server/html/</Config>
+    <Config Name="SQL Directory" Target="/var/lib/mysql" Default="" Mode="rw" Description="Container Path: /var/lib/mysql" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/appdata/hashtopolis-server/sql/</Config>
 </Container>
