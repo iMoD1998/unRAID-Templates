@@ -2,21 +2,19 @@
 <Container version="2">
     <Name>hashtopolis-server</Name>
     <Repository>kpeiruza/hashtopolis</Repository>
-    <Registry/>
+    <Registry>https://hub.docker.com/r/kpeiruza/hashtopolis</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
     <Support>https://discord.gg/S2NTxbz</Support>
-    <Project>https://hub.docker.com/r/kpeiruza/hashtopolis</Project>
+    <Project>https://github.com/s3inlc/hashtopolis</Project>
     <Overview>Hashtopolis is a multi-platform client-server tool for distributing hashcat tasks to multiple computers. The main goals for Hashtopolis's development are portability, robustness, multi-user support, and multiple groups management.</Overview>
-    <Beta>False</Beta>
     <Category>Cloud: Network:Web Network:Management Other: Security:</Category>
-    <Date>2021-01-30</Date>
     <WebUI>http://[IP]:[PORT:9019]</WebUI>
-    <Icon>https://github.com/s3inlc/hashtopolis/blob/master/src/static/logo.png</Icon>
+    <Icon>https://raw.githubusercontent.com/s3inlc/hashtopolis/master/src/static/logo.png</Icon>
     <DonateText>Support us</DonateText>
-    <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7P3KXV8DQ5XKE</DonateLink>
+    <DonateLink>https://www.paypal.com/donate/?cmd=_s-xclick&amp;amp;hosted_button_id=7P3KXV8DQ5XKE</DonateLink>
+    <Description>Hashtopolis is a multi-platform client-server tool for distributing hashcat tasks to multiple computers. The main goals for Hashtopolis's development are portability, robustness, multi-user support, and multiple groups management.</Description>
     <Networking>
         <Mode>bridge</Mode>
         <Publish/>
