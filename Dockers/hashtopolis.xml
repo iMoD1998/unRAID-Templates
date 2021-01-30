@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>hashtopolis-server</Name>
+    <Repository>kpeiruza/hashtopolis</Repository>
+    <Registry/>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://discord.gg/S2NTxbz</Support>
+    <Project>https://hub.docker.com/r/kpeiruza/hashtopolis</Project>
+    <Overview>Hashtopolis is a multi-platform client-server tool for distributing hashcat tasks to multiple computers. The main goals for Hashtopolis's development are portability, robustness, multi-user support, and multiple groups management.</Overview>
+    <Beta>False</Beta>
+    <Category>Cloud: Network:Web Network:Management Other: Security:</Category>
+    <Date>2021-01-30</Date>
+    <WebUI>http://[IP]:[PORT:9019]</WebUI>
+    <Icon>https://github.com/s3inlc/hashtopolis/blob/master/src/static/logo.png</Icon>
+    <DonateText>Support us</DonateText>
+    <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7P3KXV8DQ5XKE</DonateLink>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+    <Data/>
+    <Config Name="Web UI Port" Target="80" Default="" Mode="tcp" Description="The port the web UI will be accessible on." Type="Port" Display="always" Required="false" Mask="false">9019</Config>
+    <Config Name="MYSQL_HOST" Target="MYSQL_HOST" Default="" Mode="" Description="The IP of the MySQL sever." Type="Label" Display="always" Required="false" Mask="false"/>
+    <Config Name="MYSQL_PORT" Target="MYSQL_PORT" Default="" Mode="" Description="The port to use for the MySQL server." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="MYSQL_DB" Target="MYSQL_DB" Default="hashtopolis" Mode="" Description="The name of the database that will be used." Type="Variable" Display="always" Required="false" Mask="false">hashtopolis</Config>
+    <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="" Mode="" Description="The password of the root user." Type="Variable" Display="always" Required="false" Mask="false">password</Config>
+    <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="The name of the user account that hashtopolis will use." Type="Variable" Display="always" Required="false" Mask="false">hashtopolis</Config>
+    <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="The password of this user." Type="Variable" Display="always" Required="false" Mask="false">password</Config>
+    <Config Name="H8_USER" Target="H8_USER" Default="" Mode="" Description="The admin user account to be added to hashtopolis." Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+    <Config Name="H8_PASS" Target="H8_PASS" Default="" Mode="" Description="The admin password." Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+    <Config Name="H8_EMAIL" Target="H8_EMAIL" Default="" Mode="" Description="The email of this user." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="PHP_MAIL_HOST" Target="PHP_MAIL_HOST" Default="" Mode="" Description="The SMTP server IP address." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="PHP_MAIL_PORT" Target="PHP_MAIL_PORT" Default="" Mode="" Description="The port to use for the SMTP server." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="PHP_MAILFROM" Target="PHP_MAILFROM" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
